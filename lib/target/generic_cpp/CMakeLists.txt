@@ -47,12 +47,14 @@ set(SRCS
   resize.cc
   return.cc
   sigmoid.cc
+  hardsigmoid.cc
   slice.cc
   softmax.cc
   tile.cc
   topk.cc
   transpose.cc
   hgengine.cc
+  lstm.cc
 )
 
 set(LLVM_LINK_COMPONENTS Support)

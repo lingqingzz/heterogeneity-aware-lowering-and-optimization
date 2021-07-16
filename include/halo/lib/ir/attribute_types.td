@@ -98,3 +98,6 @@ def EnumActivationType : EnumValueType<"ActivationType",
                                      "TANH",
                                      "SIGN_BIT"
                                      ]>;
+
+def EnumDirection
+    : EnumValueType<"Direction", ["FORWARD", "REVERSE", "BIDIRECTIONAL"]>;
