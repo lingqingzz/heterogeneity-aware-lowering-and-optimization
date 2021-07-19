@@ -417,11 +417,12 @@ static std::vector<Def> ConvertSlice(const ONNXExtensionInst* ext,
   Def op_axes = Def::GetUndefined();
   Def op_steps = Def::GetUndefined();
 
-  std::vector<int> steps(input_dims, 1);
+  int start_dims = starts_type.GetNumOfDims();
+  std::vector<int> steps(start_dims, 1);
   if ((op_num == 3) || (op_num == 4)) {
     Constant* c_steps =
         cb.CreateConstant(ext->GetName() + "_steps",
-                          Type{DataType::INT32, {input_dims}}, steps.data());
+                          Type{DataType::INT32, {start_dims}}, steps.data());
     op_steps = *c_steps;
     if (op_num == 3) {
       std::vector<int> data(input_dims);
